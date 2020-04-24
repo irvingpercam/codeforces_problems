@@ -1,2 +1,2 @@
-# codeforces_problems
-In this repository I will post my solution for various codeforces problems.
+# Codeforces Problems
+In this repository I will upload my solution for various codeforces problems.
