@@ -1,15 +1,11 @@
 #include <iostream>
 #include <math.h>
 using namespace std;
-int diagonal_bishop(int r1, int c1, int r2, int c2){
-	if(((r2 - r1)%(c2 - c1)) != 0) return 0;
-        return abs((c2 - c1) / (r2 - r1));
-}
 int bishop(int r1, int c1, int r2, int c2){
-	if(r1 == r2 && c1 != c2 && diagonal_bishop(r1,c1,r2,c2) != 0) return abs(c2 - c1);
-	if(r1 != r2 && c1 == c2 && diagonal_bishop(r1,c1,r2,c2) != 0) return abs(r2 - r1);
+	if((c1+r1) % 2 != (c2 + r2) % 2) return 0;
+	if(c1 + r1 == c2 + r2 || c1 - r1 == c2 - r2) return 1;
 	else
-		return diagonal_bishop(r1,c1,r2,c2);
+		return 2;
 }
 int rook(int r1, int c1, int r2, int c2){
 	if(r2 == r1 && c2 == c1) return 0;
